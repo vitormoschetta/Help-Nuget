@@ -33,7 +33,6 @@ namespace Vithor
         public static string GroupStringList(string[] list, string separator)
         {
             return string.Join(separator, list);
-        }
-        
+        }        
     }
 }

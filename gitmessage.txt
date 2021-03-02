@@ -1,4 +1,0 @@
-Adicionei espaço para testar
-
-Aqui estou testando fazer git commit a partir de um arquivo .txt,
-para poder criar um corpo de texto de explicação.
