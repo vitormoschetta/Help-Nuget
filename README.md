@@ -52,6 +52,14 @@ Aqui você poderá fazer upload do arquivo .nupkg gerado.
 
 
 
+<br>
+
+#### Observações  
+Cada biblioteca de classe deve conter seu próprio `.nuget` publicado.   
+Supondo que criamos dois projetos `classlib` A e B. O projeto A está referenciando o B. Quando publicar o projeto A no nuget ele conterá uma dependência do projeto B, que também deve estar no nuget. 
+
+
+
 
 
 
