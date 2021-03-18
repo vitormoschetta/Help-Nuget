@@ -103,6 +103,11 @@ Lembrando que no seu `Projeto.csproj` é necessário adicionar:
 </Project>
 ```
 
+#### Rodar o pacote:
+Imaginemos que o nome do nosso arquivo `.nuspec` seja `Projeto.nuspec`. O comando para gerar o pacote seria:
+``` 
+dotnet pack -p:NuspecFile=Projeto.nuspec
+```
 
 
 
