@@ -83,7 +83,25 @@ Para que uma `dll` de terceiros seja vinculada (diferente de referenciada) a um 
 
 O arquivo a cima gera um pacote .nupkg com o nome `MyPackageName.1.0.0.nupkg`. Quando referenciado/restaurado ele descompactará também a dll `libX.dll` que foi vinculada a este projeto. Conforme o código acima essa `libX.dll` estaria dentro de uma pasta chamada `libs`.
 
+Lembrando que no seu `Projeto.csproj` é necessário adicionar:
 
+```
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>   
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="libX">
+      <HintPath>./libs/libX.dll</HintPath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Reference>
+  </ItemGroup>
+
+</Project>
+```
 
 
 
