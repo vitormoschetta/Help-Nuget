@@ -1,4 +1,4 @@
-# Help-Nuget-Publish
+# Publicar próprio código fonte
 
 Publicar seus próprios pacotes no <https://www.nuget.org/>
 
@@ -54,14 +54,34 @@ Aqui você poderá fazer upload do arquivo .nupkg gerado.
 
 <br>
 
-#### Observações  
-Cada biblioteca de classe deve conter seu próprio `.nuget` publicado.   
-Supondo que criamos dois projetos `classlib` A e B. O projeto A está referenciando o B.   
-Quando publicar o projeto A no nuget ele conterá uma dependência do projeto B, que também deve estar no nuget. Do contrario, ao tentar instalar o projeto A ocorrá um erro, pois o nuget tentará achar o projeto B e não encontrará.
+# Publicar dll de terceiros 
 
-O pacote nuget gera essa dependência automaticamente ao detectar um PackageReference (quando faz referencia a outro pacote nuget no seu projeto) ou um ProjectReference (quando faz referência direta de outro projeto local na solution).
+Para que uma `dll` de terceiros seja vinculada (diferente de referenciada) a um pacote nuget, é necessrio adicionar o arquivo `nuspec`:
 
+```
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>MyPackageName</id>
+    <version>1.0.0</version>
+    <authors>author</authors>      
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>description for my package</description>
+    <copyright>Copyright 2021</copyright>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="SampleDependency" version="1.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="./libs/libX.dll" target="lib/netstandard2.0" />
+  </files>
+</package>
+```
 
+O arquivo a cima gera um pacote .nupkg com o nome `MyPackageName.1.0.0.nupkg`. Quando referenciado/restaurado ele descompactará também a dll `libX.dll` que foi vinculada a este projeto. Conforme o código acima essa `libX.dll` estaria dentro de uma pasta chamada `libs`.
 
 
 
