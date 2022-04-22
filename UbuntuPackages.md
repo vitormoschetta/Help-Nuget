@@ -1,10 +1,4 @@
-
-Pacotes:
+Exibir locais dos pacotes e cach nuget:
 ```
-~/.nuget/packages/
-```
-
-Cache:
-```
-~/.local/share/NuGet
+dotnet nuget locals all --list
 ```
