@@ -109,7 +109,14 @@ Imaginemos que o nome do nosso arquivo `.nuspec` seja `Projeto.nuspec`. O comand
 dotnet pack -p:NuspecFile=Projeto.nuspec
 ```
 
+<br>
 
 
+## Consultar pacotes no Ubuntu
+```
+ls ~/.nuget/packages/
+ls ~/.nuget/packages/ | grep dotnet
+sudo rm -r ~/.nuget/packages/<package-name>
+```
 
 
