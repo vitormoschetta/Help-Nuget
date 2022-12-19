@@ -20,13 +20,20 @@ dotnet new classlib
 #### 03 - Modifique o arquivo _.csproj_
 ``` 
 <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <PackageId>Vithor.StringManipulation</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>author_name</Authors>
-    <Company>company_name</Company>
+    <PackageId>ViThor.Auth</PackageId>
+    <Version>0.3.0</Version>
+    <Authors>Vitor Moschetta</Authors>
+    <Company>ViThor</Company>
+    <Copyright>© 2022 ViThor</Copyright>
+    <Description>A small package that adds Authentication and Authorization layer to your dotnet
+      application.</Description>
+    <RepositoryUrl>https://github.com/vitormoschetta/ViThor.Auth</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>authentication;authorization;jwt;token;refresh;refreshtoken;openid;email;dotnet;core;aspnet;aspnetcore</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-</PropertyGroup>  
+  </PropertyGroup>
 ``` 
 
 <br>
