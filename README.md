@@ -112,11 +112,17 @@ dotnet pack -p:NuspecFile=Projeto.nuspec
 <br>
 
 
-## Consultar pacotes no Ubuntu
+## As vezes o cache do NuGet buga, então executar o seguinte comando para limpar o cache:
+```
+dotnet nuget locals --clear all
+```
+
+Outra forma de limpar o cache (Linux Ubuntu):
 ```
 ls ~/.nuget/packages/
 ls ~/.nuget/packages/ | grep dotnet
 sudo rm -r ~/.nuget/packages/<package-name>
 ```
+
 
 
